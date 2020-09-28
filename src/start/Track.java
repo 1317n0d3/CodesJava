@@ -1,9 +1,11 @@
 package start;
 
+import java.util.List;
+
 public class Track {
     String name;
     String author;
-    Album album;
+    private Album album;
 
     public Track(String name) {
         this.name = name;
@@ -23,6 +25,14 @@ public class Track {
         this.name = name;
         this.author = author;
         this.album = album;
+    }
+
+    public void setAlbum(Album album) {
+        this.album = album;
+    }
+
+    public Album albumTracks(){
+        return album;
     }
 
     @Override

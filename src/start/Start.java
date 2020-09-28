@@ -42,20 +42,20 @@ public class Start {
 //        Comments com3 = new Comments("So good", 75, com2);
 //        System.out.println(com3);
 
-//        Album album1 = new Album("Kuklovod", "Metallov");
-//        Album album2 = new Album("Shosse k OOP", "Acid");
-//
-//        Track track1 = new Track("Sostoyanie objects", "Yang");
-//        Track track2 = new Track("Shosse k OOP");
-//        Track track3 = new Track("Odnorazovyi programmist", "Berton");
-//
-//        track1.album = album2;
-//        track2.album = album2;
-//        track3.album = album1;
-//
-//        System.out.println(track1);
-//        System.out.println(track2);
-//        System.out.println(track3);
+        Album album1 = new Album("Kuklovod", "Metallov");
+        Album album2 = new Album("Shosse k OOP", "Acid");
+
+        Track track1 = new Track("Sostoyanie objects", "Yang");
+        Track track2 = new Track("Shosse k OOP");
+        Track track3 = new Track("Odnorazovyi programmist", "Berton");
+
+        track1.setAlbum(album2);
+        track2.setAlbum(album2);
+        track3.setAlbum(album1);
+
+        System.out.println(track1);
+        System.out.println(track2);
+        System.out.println(track3);
     }
     
 }
