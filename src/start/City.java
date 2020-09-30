@@ -14,11 +14,16 @@ import java.util.List;
  */
 class City {
     String name;
-    Route [] routes;
-    List <Route> route = new ArrayList <>();
+    List <Route> routes = new ArrayList <>();
+    List <City> city = new ArrayList<>();
 
     public City(String name) {
         this.name = name;
+    }
+
+    public City(String name, List<City> city) {
+        this.name = name;
+        this.city = city;
     }
 
     @Override

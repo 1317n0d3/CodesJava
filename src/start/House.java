@@ -10,7 +10,11 @@ package start;
  * @author Admin
  */
 class House {
-    int floors;
+    final int floors;
+
+    public House(int floors) {
+        this.floors = floors;
+    }
 
     @Override
     public String toString() {
@@ -20,6 +24,4 @@ class House {
             return "Неправильное количество этажей.";
         return "Дом с " + floors + " этажами.";
     }
-    
-    
 }

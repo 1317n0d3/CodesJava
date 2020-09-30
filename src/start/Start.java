@@ -37,25 +37,37 @@ public class Start {
 //
 //        c1.route.add(r1);
 
+//        Album album1 = new Album("Kuklovod", "Metallov");
+//        Album album2 = new Album("Shosse k OOP", "Acid");
+//
+//        Track track1 = new Track("Sostoyanie objects", "Yang");
+//        Track track2 = new Track("Shosse k OOP");
+//        Track track3 = new Track("Odnorazovyi programmist", "Berton");
+//
+//        track1.setAlbum(album2);
+//        track2.setAlbum(album2);
+//        track3.setAlbum(album1);
+//
+//        System.out.println(track1);
+//        System.out.println(track2);
+//        System.out.println(track3);
+
 //        Comments com1 = new Comments("Nice job", 100);
 //        Comments com2 = new Comments("Very bad", 50, com1);
-//        Comments com3 = new Comments("So good", 75, com2);
-//        System.out.println(com3);
+//        Comments com3 = new Comments("Historical shit", 0, com1);
+//        Comments com4 = new Comments("So good", 75, com2);
+//
+//        Publication pub = new Publication("History", "sdlf sldkf sdlkf jslkdafljs adkjfls dflakdf ad;fsdklf", com4, 100);
+//        pub.tags.add("IT");
+//        pub.tags.add("PE");
+//
+//        System.out.println(pub);
 
-        Album album1 = new Album("Kuklovod", "Metallov");
-        Album album2 = new Album("Shosse k OOP", "Acid");
+        Human human1 = new Human("Lev", 170);
+        Human human2 = new Human(new FullName("Pushkin", "Sergey"), 168, human1);
+        Human human3 = new Human("Alexandr", 167, human2);
 
-        Track track1 = new Track("Sostoyanie objects", "Yang");
-        Track track2 = new Track("Shosse k OOP");
-        Track track3 = new Track("Odnorazovyi programmist", "Berton");
-
-        track1.setAlbum(album2);
-        track2.setAlbum(album2);
-        track3.setAlbum(album1);
-
-        System.out.println(track1);
-        System.out.println(track2);
-        System.out.println(track3);
+        System.out.println(human3);
     }
     
 }

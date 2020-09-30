@@ -11,8 +11,8 @@ package start;
  */
 class Time {
     int sec;
-    private final int min;
-    private final int hour;
+    final int min;
+    final int hour;
 
     public Time(int sec) {
         this.sec = sec;
@@ -21,6 +21,12 @@ class Time {
         hour = this.sec / 3600;
         min = (this.sec % 3600) / 60;
         this.sec = (this.sec % 3600) % 60;
+    }
+
+    public Time(int sec, int min, int hour) {
+        this.sec = sec;
+        this.min = min;
+        this.hour = hour;
     }
 
     @Override

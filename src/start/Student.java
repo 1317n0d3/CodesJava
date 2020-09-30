@@ -15,8 +15,12 @@ class Student {
     String name;
     private int [] marks;
 
-    public Student(String name, int...marks) {
+    public Student(String name) {
         this.name = name;
+    }
+
+    public Student(String name, int...marks) {
+        this(name);
         this.marks = Arrays.copyOf(marks, marks.length);
     }
 
