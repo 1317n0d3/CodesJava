@@ -63,11 +63,28 @@ public class Start {
 //
 //        System.out.println(pub);
 
-        Human human1 = new Human("Lev", 170);
-        Human human2 = new Human(new FullName("Pushkin", "Sergey"), 168, human1);
-        Human human3 = new Human("Alexandr", 167, human2);
+//        Human human1 = new Human("Lev", 170);
+//        Human human2 = new Human(new FullName("Pushkin", "Sergey"), 168, human1);
+//        Human human3 = new Human("Alexandr", 167, human2);
+//
+//        System.out.println(human3);
 
-        System.out.println(human3);
+//        Gun gun = new Gun(3);
+//        gun.shoot();
+//        gun.shoot();
+//        gun.shoot();
+//        gun.shoot();
+//        gun.shoot();
+
+//        Cat cat = new Cat("Barsik");
+//        cat.mew(3);
+
+//        Line l = new Line(1, 1, 10, 15);
+//        System.out.println(l.length());
+
+        Fraction f1 = new Fraction(1, 2);
+        Fraction f2 = new Fraction(2, 5);
+        System.out.println(f1.divide(f2));
     }
     
 }

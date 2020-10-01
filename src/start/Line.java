@@ -23,6 +23,10 @@ class Line {
         p2 = new Point(x2, y2);
     }
 
+    public int length(){
+        return (int)Math.sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
+    }
+
     @Override
     public String toString() {
         return "Line from " + p1 + " to " + p2;

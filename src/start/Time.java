@@ -29,6 +29,18 @@ class Time {
         this.hour = hour;
     }
 
+    public int showHour() {
+        return hour;
+    }
+
+    public int showMin() {
+        return min;
+    }
+
+    public int showSec() {
+        return sec;
+    }
+
     @Override
     public String toString() {
         return hour + ":" + min + ":" + sec;
