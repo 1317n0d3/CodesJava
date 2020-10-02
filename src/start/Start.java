@@ -82,9 +82,20 @@ public class Start {
 //        Line l = new Line(1, 1, 10, 15);
 //        System.out.println(l.length());
 
-        Fraction f1 = new Fraction(1, 2);
-        Fraction f2 = new Fraction(2, 5);
-        System.out.println(f1.divide(f2));
+//        Fraction f1 = new Fraction(1, 2);
+//        Fraction f2 = new Fraction(2, 5);
+//        System.out.println(f1.divide(f2));
+
+//        Student student = new Student("Vasya", 3, 4, 5, 4);
+//        Student student1 = new Student("Petya", 5, 5, 5, 5);
+//
+//        System.out.println(student.averageRate());
+//        System.out.println(student1.averageRate());
+//
+//        System.out.println(student.excellent());
+//        System.out.println(student1.excellent());
+
+
     }
     
 }

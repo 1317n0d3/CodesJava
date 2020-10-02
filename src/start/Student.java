@@ -16,12 +16,31 @@ class Student {
     private int [] marks;
 
     public Student(String name) {
-        this.name = name;
+        this(name, null);
     }
 
     public Student(String name, int...marks) {
-        this(name);
+        this.name = name;
         this.marks = Arrays.copyOf(marks, marks.length);
+    }
+
+    double averageRate(){
+        double rate = 0;
+        if (marks.length == 0) return 0;
+        else {
+            for(int i:marks){
+                rate += i;
+            }
+            rate /= marks.length;
+        }
+        return rate;
+    }
+
+    boolean excellent(){
+        int flag = 0;
+        for (int i:marks) if (i != 5) flag = 1;
+        if (flag == 0) return true;
+        else return false;
     }
 
     public int[] getMarks() {
