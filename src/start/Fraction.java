@@ -1,11 +1,13 @@
 package start;
 
 public class Fraction {
-    int num;
-    int den;
+    private int num;
+    private int den;
 
     public Fraction(int num, int den) {
         this.num = num;
+        if (den < 1)
+            throw new IllegalArgumentException("Wrong denominator");
         this.den = den;
     }
 

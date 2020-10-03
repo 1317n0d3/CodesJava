@@ -15,6 +15,7 @@ class Time {
     final int hour;
 
     public Time(int sec) {
+        if (sec < 0) throw new IllegalArgumentException("Wrong argument");
         this.sec = sec;
         
         while(this.sec >= 3600 * 24) this.sec -= 3600 * 24;
@@ -24,6 +25,7 @@ class Time {
     }
 
     public Time(int sec, int min, int hour) {
+        if (hour > 24 || hour < 0 || min > 59 || min < 0 || sec > 59 || sec < 0) throw new IllegalArgumentException("Incorrect time");
         this.sec = sec;
         this.min = min;
         this.hour = hour;

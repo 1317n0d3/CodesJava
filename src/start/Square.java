@@ -5,16 +5,28 @@ import java.util.List;
 
 public class Square {
     Point leftTop;
-    int width;
+    private int width;
 
     public Square(Point leftTop, int width) {
         this.leftTop = leftTop;
+        if (width < 0)
+            throw new IllegalArgumentException("Incorrect width argument");
         this.width = width;
     }
 
     public Square(int x, int y, int width){
+        this(null, width);
         this.leftTop.x = x;
         this.leftTop.y = y;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public void setWidth(int width) {
+        if (width < 0)
+            throw new IllegalArgumentException("Incorrect width argument");
         this.width = width;
     }
 
