@@ -12,12 +12,14 @@ package start;
 class Comments {
     String str;
     int rate;
+    int rateFlag = 0;
     Comments comment;
     int num = 0;
 
     public Comments(String str, int rate) {
         this.str = str;
         this.rate = rate;
+        this.rateFlag = 1;
     }
 
     public Comments(String str, int rate, Comments comment) {
@@ -25,6 +27,28 @@ class Comments {
         this.rate = rate;
         this.comment = comment;
         this.num = comment.num + 1;
+        this.rateFlag = 1;
+    }
+
+    void rateUp(){
+        this.rate++;
+    }
+
+    void rateDown(){
+            this.rate--;
+    }
+
+    void canChange() {
+        if (rateFlag == 0)
+            System.out.println("You can change comments");
+        else
+            System.out.println("You can not change parametres");
+    }
+
+    public void setComment(String str) {
+        if (rateFlag == 1)
+            throw new IllegalArgumentException("Editing impossible");
+        this.str = str;
     }
 
     @Override

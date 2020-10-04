@@ -21,6 +21,10 @@ class Student {
 
     public Student(String name, int...marks) {
         this.name = name;
+        for (int i:marks){
+            if (i > 5 || i < 2)
+                throw new IllegalArgumentException("Illegal mark");
+        }
         this.marks = Arrays.copyOf(marks, marks.length);
     }
 

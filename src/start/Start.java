@@ -95,7 +95,18 @@ public class Start {
 //        System.out.println(student.excellent());
 //        System.out.println(student1.excellent());
 
-
+//        Point p1 = new Point(3, 3);
+//        Point p2 = new Point(7, 5);
+//        Line l1 = new Line(p1, p2);
+//        Line l2 = new Line(p2, p1);
+//        Line l3 = new Line(6, 6,  6, 6);
+//
+//        l3.setP1(p2);
+//        p1.x = 99;
+//
+//        System.out.println(l1);
+//        System.out.println(l2);
+//        System.out.println(l3);
     }
     
 }

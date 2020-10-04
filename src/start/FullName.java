@@ -10,11 +10,13 @@ package start;
  * @author Admin
  */
 class FullName {
-    String surname;
-    String name;
-    String patronymic;
+    private String surname;
+    private String name;
+    private String patronymic;
 
     public FullName(String name) {
+        if (name == null)
+            throw new IllegalArgumentException("Input name");
         this.name = name;
     }
 
@@ -26,6 +28,36 @@ class FullName {
     public FullName(String surname, String name, String patronymic) {
         this.surname = surname;
         this.name = name;
+        this.patronymic = patronymic;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        if (surname.isEmpty() || surname == null)
+            throw new IllegalArgumentException("Input surname");
+        this.surname = surname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        if (name == null || name.isEmpty())
+            throw new IllegalArgumentException("Input name");
+        this.name = name;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        if (patronymic == null || patronymic.isEmpty())
+            throw new IllegalArgumentException("Input name");
         this.patronymic = patronymic;
     }
 
