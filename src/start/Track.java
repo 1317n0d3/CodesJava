@@ -18,20 +18,23 @@ public class Track {
 
     public Track(String name, Album album) {
         this.name = name;
-        this.album = album;
+        album.tracks.add(new Track(name));
+        this.album = new Album(album.name, album.author, album.tracks);
     }
 
     public Track(String name, String author, Album album) {
         this.name = name;
         this.author = author;
-        this.album = album;
+        album.tracks.add(new Track(name));
+        this.album = new Album(album.name, album.author, album.tracks);
     }
 
     public void setAlbum(Album album) {
+        album.tracks.add(new Track(name));
         this.album = album;
     }
 
-    public Album albumTracks(){
+    public Album getAlbum(){
         return album;
     }
 

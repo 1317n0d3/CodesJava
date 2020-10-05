@@ -5,7 +5,11 @@ public class Gun {
     final int maxBullets;
 
     public Gun(int bullets, int maxBullets) {
+        if (bullets < 0)
+            throw new IllegalArgumentException("Wrong bullets number");
         this.bullets = bullets;
+        if (maxBullets < 0)
+            throw new IllegalArgumentException("Wrong maxBullets number");
         this.maxBullets = maxBullets;
     }
 

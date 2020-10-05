@@ -15,9 +15,7 @@ public class Square {
     }
 
     public Square(int x, int y, int width){
-        this(null, width);
-        this.leftTop.x = x;
-        this.leftTop.y = y;
+        this(new Point(x, y), width);
     }
 
     public int getWidth() {

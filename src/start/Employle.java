@@ -10,19 +10,39 @@ package start;
  * @author светашов_кв
  */
 class Employle {
-    String name;
-    Departament dep;
+    private String name;
+    private Departament dep;
 
     public Employle(String name, Departament dep) {
         this.name = name;
         this.dep = dep;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Departament getDep() {
+        return dep;
+    }
+
+    public void setDep(Departament dep) {
+        if (this.dep == null)
+            this.dep = dep;
+        if (this.dep.getBoss() == this)
+            this.dep.setBoss(null);
+        this.dep = dep;
+    }
+
     @Override
     public String toString() {
-        if(this.name == dep.boss)
+        if(this.name == dep.getBoss().name)
             return dep.toString();
         else
-            return name + " working in " + dep.name + " with boss " + dep.boss;
+            return name + " working in " + dep.getName() + " with boss " + dep.getBoss();
     }
 }

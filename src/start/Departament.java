@@ -5,17 +5,37 @@
  */
 package start;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author светашов_кв
  */
 class Departament {
-    String name;
-    String boss;
+    private String name;
+    private Employle boss;
+    private List<Employle> empls = new ArrayList<>();
 
     public Departament(String name, String boss) {
         this.name = name;
         this.boss = boss;
+    }
+
+    public Employle getBoss() {
+        return boss;
+    }
+
+    public void setBoss(String boss) {
+        this.boss = boss;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

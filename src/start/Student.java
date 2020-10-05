@@ -15,10 +15,6 @@ class Student {
     String name;
     private int [] marks;
 
-    public Student(String name) {
-        this(name, null);
-    }
-
     public Student(String name, int...marks) {
         this.name = name;
         for (int i:marks){
@@ -52,7 +48,11 @@ class Student {
     }
 
     public void setMarks(int[] marks) {
-        this.marks = marks;
+        for (int i:marks){
+            if (i > 5 || i < 2)
+                throw new IllegalArgumentException("Illegal mark");
+        }
+        this.marks = Arrays.copyOf(marks, marks.length);
     }
 
     @Override

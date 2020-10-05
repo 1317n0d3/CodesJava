@@ -11,8 +11,8 @@ package start;
  */
 class Time {
     int sec;
-    final int min;
-    final int hour;
+    int min;
+    int hour;
 
     public Time(int sec) {
         if (sec < 0) throw new IllegalArgumentException("Wrong argument");
