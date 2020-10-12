@@ -1,6 +1,6 @@
 package start;
 
-public class Fraction {
+final public class Fraction {
     private int num;
     private int den;
 
@@ -32,6 +32,10 @@ public class Fraction {
     public Fraction divide(Fraction f) {
         return new Fraction(num * f.den, den * f.num);
     }
+
+    public int intNum(){ return num/den;}
+
+    public double doubleNum(){ return  (double)num / den; }
 
     @Override
     public String toString() {
