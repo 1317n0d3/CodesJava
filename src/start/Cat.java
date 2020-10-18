@@ -1,17 +1,17 @@
 package start;
 
-public class Cat {
+public class Cat implements Meowable{
     String name;
 
     public Cat(String name) {
         this.name = name;
     }
 
-    public void mew() {
+    public void meow() {
         System.out.println(name + ": mew!");
     }
 
-    public void mew(int n){
+    public void meow(int n){
         System.out.println(name + ": mew" + "-mew".repeat(n - 1) + "!");
     }
 

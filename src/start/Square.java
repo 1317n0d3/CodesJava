@@ -3,7 +3,7 @@ package start;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Square {
+public class Square extends Figure{
     Point leftTop;
     private int width;
 
@@ -28,18 +28,22 @@ public class Square {
         this.width = width;
     }
 
-    BrokenLine brokenLine(){
+    public double getArea(){
+        return width * width;
+    }
+
+    public BrokenLine brokenLine(){
         List<Point> points = new ArrayList<>();
         points.add(new Point(leftTop.x, leftTop.y));
-        points.add(new Point(leftTop.x + width, leftTop.y));
-        points.add(new Point(leftTop.x + width, leftTop.y - width));
-        points.add(new Point(leftTop.x, leftTop.y - width));
+        points.add(new Point(leftTop.x + getWidth(), leftTop.y));
+        points.add(new Point(leftTop.x + getWidth(), leftTop.y - getWidth()));
+        points.add(new Point(leftTop.x, leftTop.y - getWidth()));
         BrokenLine line = new BrokenLine(points);
         return line;
     }
 
     @Override
     public String toString() {
-        return "Square in point: " + leftTop + " width: " + width;
+        return "Square in point: " + leftTop + " width: " + getWidth();
     }
 }

@@ -1,6 +1,6 @@
 package start;
 
-final public class Fraction {
+final public class Fraction extends Number{
     private int num;
     private int den;
 
@@ -33,9 +33,13 @@ final public class Fraction {
         return new Fraction(num * f.den, den * f.num);
     }
 
-    public int intNum(){ return num/den;}
+    public int intValue(){ return num/den;}
 
-    public double doubleNum(){ return  (double)num / den; }
+    public long longValue(){ return (long)num / den; }
+
+    public float floatValue(){ return (float)num / den; }
+
+    public double doubleValue(){ return  (double)num / den; }
 
     @Override
     public String toString() {

@@ -17,7 +17,7 @@ class Departament {
     private Employle boss;
     private List<Employle> empls = new ArrayList<>();
 
-    public Departament(String name, String boss) {
+    public Departament(String name, Employle boss) {
         this.name = name;
         this.boss = boss;
     }
@@ -26,7 +26,7 @@ class Departament {
         return boss;
     }
 
-    public void setBoss(String boss) {
+    public void setBoss(Employle boss) {
         this.boss = boss;
     }
 

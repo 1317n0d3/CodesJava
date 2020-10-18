@@ -1,7 +1,7 @@
 package start;
 
-public class Sparrow extends Bird {
+public class Sparrow extends Bird{
     public void sing(){
-        System.out.println("Chicha");
+        System.out.println("chirick");
     }
 }
