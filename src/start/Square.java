@@ -38,7 +38,7 @@ public class Square extends Figure{
         points.add(new Point(leftTop.x + getWidth(), leftTop.y));
         points.add(new Point(leftTop.x + getWidth(), leftTop.y - getWidth()));
         points.add(new Point(leftTop.x, leftTop.y - getWidth()));
-        BrokenLine line = new BrokenLine(points);
+        ClosedLine line = new ClosedLine(points);
         return line;
     }
 

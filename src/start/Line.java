@@ -9,7 +9,7 @@ package start;
  *
  * @author Admin
  */
-class Line {
+class Line implements Lengthable{
     private Point p1;
     private Point p2;
 

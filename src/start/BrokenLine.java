@@ -3,7 +3,7 @@ package start;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BrokenLine {
+public class BrokenLine implements Lengthable{
     List<Point> points = new ArrayList<>();
 
     public BrokenLine() {
@@ -13,7 +13,7 @@ public class BrokenLine {
         this.points = points;
     }
 
-    int lineLength(){
+    public int length(){
         int length = 0;
         for (int i = 1; i < points.size(); i++){
             length += (points.get(i).x - points.get(i - 1).x) * (points.get(i).x - points.get(i - 1).x) + (points.get(i).y - points.get(i - 1).y) * (points.get(i).y - points.get(i - 1).y);

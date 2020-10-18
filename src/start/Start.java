@@ -9,9 +9,9 @@ public class Start {
     public static void main(String[] args) {
     }
 
-    public void sing(Bird...birds){
-        for (Bird bird : birds){
-            bird.sing();
+    public static void mew(Meowable...meowables){
+        for (Meowable meowable : meowables){
+            meowable.meow();
         }
     }
 }
