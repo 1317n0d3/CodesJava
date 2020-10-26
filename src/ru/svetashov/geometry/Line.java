@@ -5,6 +5,8 @@
  */
 package ru.svetashov.geometry;
 
+import java.util.Objects;
+
 /**
  *
  * @author Admin
@@ -40,6 +42,24 @@ class Line implements Lengthable {
 
     public void setP2(Point p2) {
         this.p2 = new Point(p2.x, p2.y);
+    }
+
+    @Override
+    public boolean equals(Object line){
+        if(line == this) return true;
+        if(line == null || this.getClass() != line.getClass()) return false;
+        Line newLine = (Line) line;
+        return Objects.equals(p1, newLine.p1) && Objects.equals(p2, newLine.p2);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(p1, p2);
+    }
+
+    @Override
+    protected Line clone() throws CloneNotSupportedException {
+        return (Line) super.clone();
     }
 
     @Override

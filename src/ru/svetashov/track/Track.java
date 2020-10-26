@@ -16,24 +16,28 @@ public class Track {
 
     public Track(String name, Album album) {
         this.name = name;
-        album.tracks.add(new Track(name));
+        album.tracks.add(this);
         this.album = new Album(album.name, album.author, album.tracks);
     }
 
     public Track(String name, String author, Album album) {
         this.name = name;
         this.author = author;
-        album.tracks.add(new Track(name));
-        this.album = new Album(album.name, album.author, album.tracks);
+        album.tracks.add(this);
+        this.album = album;
     }
 
     public void setAlbum(Album album) {
-        album.tracks.add(new Track(name));
+        album.tracks.add(this);
         this.album = album;
     }
 
     public Album getAlbum(){
         return album;
+    }
+
+    public void getTracks(){
+        System.out.println(this.album.getTracks());
     }
 
     @Override

@@ -10,6 +10,8 @@ import ru.svetashov.animals.Cat;
 import ru.svetashov.animals.Meowable;
 import ru.svetashov.geometry.Figure;
 import ru.svetashov.geometry.Lengthable;
+import ru.svetashov.track.Album;
+import ru.svetashov.track.Track;
 
 import java.awt.*;
 import java.math.BigInteger;
@@ -18,15 +20,12 @@ import static java.lang.Integer.parseInt;
 
 public class Start {
     public static void main(String[] args) {
-        Point point = new Point(1, 1);
-        ru.svetashov.geometry.Point point1 = new ru.svetashov.geometry.Point(0, 0);
 
-        System.out.println(point);
-        System.out.println(point1);
     }
 
-    public static int powStr(String [] str){
-        return (int) pow(parseInt(str[0]), parseInt(str[1]));
+    public static double powStr(String [] args){
+        if (args.length != 2) throw new IllegalArgumentException("You must input 2 args");
+        return pow(parseInt(args[0]), parseInt(args[1]));
     }
 
     public static void mew(Meowable...meowables){

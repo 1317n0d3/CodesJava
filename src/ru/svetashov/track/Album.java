@@ -16,7 +16,15 @@ public class Album {
     public Album(String name, String author, List<Track> tracks) {
         this.name = name;
         this.author = author;
-        this.tracks = List.copyOf(tracks);
+        this.tracks = tracks;
+    }
+
+    public void addTrack(Track track){
+        tracks.add(track);
+    }
+
+    public List<Track> getTracks(){
+        return tracks;
     }
 
     @Override

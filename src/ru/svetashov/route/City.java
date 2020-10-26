@@ -15,15 +15,22 @@ import java.util.List;
 class City {
     String name;
     List <Route> routes = new ArrayList <>();
-    List <City> city = new ArrayList<>();
 
     public City(String name) {
         this.name = name;
     }
 
-    public City(String name, List<City> city) {
+    public City(String name, List<Route> routes) {
         this.name = name;
-        this.city = city;
+        this.routes = List.copyOf(routes);
+    }
+
+    public List<Route> getRoutes() {
+        return List.copyOf(routes);
+    }
+
+    public void setRoutes(List<Route> routes) {
+        this.routes = List.copyOf(routes);
     }
 
     @Override
