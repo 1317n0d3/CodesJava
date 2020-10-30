@@ -21,10 +21,10 @@ public class MachineGun extends Gun{
     }
 
     public void shoot(){
-        while (fireRate > 0) super.shoot();
+        for (int i = 0; i < fireRate; i++) super.shoot();
     }
 
     public void shoot(int sec){
-        while(fireRate * sec > 0) super.shoot();
+        for(int i = 0; i < fireRate * sec; i++) super.shoot();
     }
 }

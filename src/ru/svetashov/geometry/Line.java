@@ -5,13 +5,15 @@
  */
 package ru.svetashov.geometry;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
  *
  * @author Admin
  */
-class Line implements Lengthable {
+public class Line implements Lengthable, PolygonalChain {
     private Point p1;
     private Point p2;
 
@@ -42,6 +44,13 @@ class Line implements Lengthable {
 
     public void setP2(Point p2) {
         this.p2 = new Point(p2.x, p2.y);
+    }
+
+    public BrokenLine getBrokenLine(){
+        List<Point> points = new ArrayList<>();
+        points.add(p1);
+        points.add(p2);
+        return new BrokenLine(points);
     }
 
     @Override

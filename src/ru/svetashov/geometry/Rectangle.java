@@ -3,7 +3,7 @@ package ru.svetashov.geometry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rectangle extends Square{
+public class Rectangle extends Square implements PolygonalChain{
     private int length;
 
     public Rectangle(Point leftTop, int width, int length){
@@ -23,7 +23,7 @@ public class Rectangle extends Square{
         this.length = length;
     }
 
-    public BrokenLine brokenLine(){
+    public BrokenLine getBrokenLine(){
         List<Point> points = new ArrayList<>();
         points.add(new Point(leftTop.x, leftTop.y));
         points.add(new Point(leftTop.x + getWidth(), leftTop.y));

@@ -1,6 +1,8 @@
 package ru.svetashov.weapons;
 
 public class Gun extends Weapon{
+    private int ammo;
+    private int maxAmmo;
 
     public Gun(int ammo){
         super(ammo);
@@ -11,8 +13,9 @@ public class Gun extends Weapon{
     }
 
     void shoot(){
-        if (getAmmo() > 0) {
+        if (this.ammo > 0) {
             System.out.println("BAH!");
+            ammo--;
         } else
             System.out.println("Bruh");
     }
@@ -20,7 +23,7 @@ public class Gun extends Weapon{
     @Override
     public String toString() {
         return "Gun{" +
-                "ammo=" + ammo() +
+                "ammo=" + this.ammo +
                 '}';
     }
 }

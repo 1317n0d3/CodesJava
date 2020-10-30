@@ -3,7 +3,7 @@ package ru.svetashov.geometry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Square extends Figure{
+public class Square extends Figure implements PolygonalChain{
     Point leftTop;
     private int width;
 
@@ -32,13 +32,13 @@ public class Square extends Figure{
         return width * width;
     }
 
-    public BrokenLine brokenLine(){
+    public BrokenLine getBrokenLine(){
         List<Point> points = new ArrayList<>();
         points.add(new Point(leftTop.x, leftTop.y));
         points.add(new Point(leftTop.x + getWidth(), leftTop.y));
         points.add(new Point(leftTop.x + getWidth(), leftTop.y - getWidth()));
         points.add(new Point(leftTop.x, leftTop.y - getWidth()));
-        ClosedLine line = new ClosedLine(points);
+        BrokenLine line = new BrokenLine(points);
         return line;
     }
 

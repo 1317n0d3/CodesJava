@@ -1,6 +1,9 @@
 package ru.svetashov.geometry;
 
-public class Triangle extends Figure{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Triangle extends Figure implements PolygonalChain{
     Point vertex1, vertex2, vertex3;
 
     public Triangle(Point vertex1, Point vertex2, Point vertex3) {
@@ -15,6 +18,14 @@ public class Triangle extends Figure{
         Line c = new Line(vertex3, vertex1);
         int p = (a.length() + b.length() + c.length()) / 2;
         return Math.sqrt(p * (p - a.length()) * (p - b.length()) * (p - c.length()));
+    }
+
+    public BrokenLine getBrokenLine(){
+        List<Point> points = new ArrayList<>();
+        points.add(vertex1);
+        points.add(vertex2);
+        points.add(vertex3);
+        return new BrokenLine(points);
     }
 
     @Override

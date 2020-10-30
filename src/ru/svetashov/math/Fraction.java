@@ -1,5 +1,7 @@
 package ru.svetashov.math;
 
+import java.util.Objects;
+
 final public class Fraction extends Number{
     private int num;
     private int den;
@@ -40,6 +42,20 @@ final public class Fraction extends Number{
     public float floatValue(){ return (float)num / den; }
 
     public double doubleValue(){ return  (double)num / den; }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fraction fraction = (Fraction) o;
+        return num == fraction.num &&
+                den == fraction.den;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(num, den);
+    }
 
     @Override
     public String toString() {
