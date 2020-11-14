@@ -1,5 +1,7 @@
 package ru.svetashov.math;
 
+import ru.svetashov.exception.FractionException;
+
 import java.util.Objects;
 
 final public class Fraction extends Number{
@@ -35,7 +37,10 @@ final public class Fraction extends Number{
         return new Fraction(num * f.den, den * f.num);
     }
 
-    public int intValue(){ return num/den;}
+    public int intValue(){
+        if(den == 0) throw new FractionException("", new ArithmeticException());
+        return num/den;
+    }
 
     public long longValue(){ return (long)num / den; }
 

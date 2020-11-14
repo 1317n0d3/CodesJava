@@ -25,7 +25,6 @@ import static java.lang.Integer.parseInt;
 public class Start {
     public static void main(String[] args) {
 
-        // 11.7
 //        PolygonalChain [] lines = new PolygonalChain[3];
 //        lines[0] = new Square(new Point(1, 1), 5);
 //        lines[1] = new Triangle(new Point(0, 0), new Point(7, 2), new Point(10, 10));
@@ -33,14 +32,15 @@ public class Start {
 //
 //        System.out.println(getPolygonalChain(lines));
 
-        // 11.8
-//        BestShooter shooter1 = new BestShooter("John", new Gun(3, 3));
-//        BestShooter shooter2 = new BestShooter("Bob");
-//        BestShooter shooter3 = new BestShooter("K", new MachineGun(6));
-//
-//        shooter1.shoot();
-//        shooter2.shoot();
-//        shooter3.shoot();
+        List<Point> points = new ArrayList<>();
+        points.add(new Point(2, 3));
+        points.add(new Point(0, 0));
+        points.add(new Point(9, 1));
+
+        BrokenLine brokenLine = new BrokenLine(points);
+        ClosedLine closedLine = new ClosedLine(points);
+
+        System.out.println(brokenLine.equals(closedLine));
     }
 
     public static PolygonalChain getPolygonalChain(PolygonalChain...polygonalChains){
@@ -90,5 +90,13 @@ public class Start {
         for (Bird bird : birds){
             bird.sing();
         }
+    }
+
+    public static List<Object> clone(Cloneable...cloneables){
+        List<Object> copies = new ArrayList<>();
+        for(Cloneable cloneable : cloneables){
+//            copies.add(cloneable.clone());
+        }
+        return copies;
     }
 }

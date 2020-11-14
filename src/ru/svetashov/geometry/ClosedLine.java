@@ -2,7 +2,7 @@ package ru.svetashov.geometry;
 
 import java.util.List;
 
-public class ClosedLine extends BrokenLine implements PolygonalChain{
+public class ClosedLine extends BrokenLine{
     public ClosedLine (List<Point> points){
         super(points);
     }

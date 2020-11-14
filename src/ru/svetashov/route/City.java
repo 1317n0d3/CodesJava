@@ -36,7 +36,7 @@ public class City {
     }
 
     public void addRoute (City city, int price, boolean flag){
-        if (CityChecked(city) == false)
+        if (cityCheck(city) == false)
             throw new IllegalArgumentException();
         if (flag == true) {
             this.routes.add(new Route(city, price));
@@ -48,13 +48,13 @@ public class City {
     }
 
     public void addRoute (Route route){
-        if (CityChecked(route.city) == false)
+        if (cityCheck(route.city) == false)
             throw new IllegalArgumentException();
         this.routes.add(new Route(route.city, route.price));
     }
 
     public void addRoute (City city, int price){
-        if (CityChecked(city) == false)
+        if (cityCheck(city) == false)
             throw new IllegalArgumentException();
         this.routes.add(new Route(city, price));
     }
@@ -63,7 +63,7 @@ public class City {
         this.routes.remove(route);
     }
 
-    public boolean CityChecked (City city){
+    public boolean cityCheck (City city){
         for (Route route : routes) {
             if (route.city == city)
                 return false;
