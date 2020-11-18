@@ -14,10 +14,10 @@ import java.util.Objects;
  * @author Admin
  */
 public class Line implements Lengthable, PolygonalChain {
-    private Point p1;
-    private Point p2;
+    private Point<Integer> p1;
+    private Point<Integer> p2;
 
-    public Line(Point p1, Point p2) {
+    public Line(Point<Integer> p1, Point<Integer> p2) {
         this(p1.x, p1.y, p2.x, p2.y);
     }
 
@@ -30,20 +30,20 @@ public class Line implements Lengthable, PolygonalChain {
         return (int)Math.sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
     }
 
-    public Point getP1() {
+    public Point<Integer> getP1() {
         return p1;
     }
 
-    public Point getP2() {
+    public Point<Integer> getP2() {
         return p2;
     }
 
-    public void setP1(Point p1) {
-        this.p1 = new Point(p1.x, p1.y);
+    public void setP1(Point<Integer> p1) {
+        this.p1 = new Point<>(p1.x, p1.y);
     }
 
-    public void setP2(Point p2) {
-        this.p2 = new Point(p2.x, p2.y);
+    public void setP2(Point<Integer> p2) {
+        this.p2 = new Point<>(p2.x, p2.y);
     }
 
     public BrokenLine getBrokenLine(){

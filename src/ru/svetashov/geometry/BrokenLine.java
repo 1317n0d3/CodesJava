@@ -17,7 +17,7 @@ public class BrokenLine implements Lengthable, PolygonalChain {
     public int length(){
         int length = 0;
         for (int i = 1; i < points.size(); i++){
-            length += (points.get(i).x - points.get(i - 1).x) * (points.get(i).x - points.get(i - 1).x) + (points.get(i).y - points.get(i - 1).y) * (points.get(i).y - points.get(i - 1).y);
+            length += (points.get(i).x.doubleValue() - points.get(i - 1).x.doubleValue()) * (points.get(i).x.doubleValue() - points.get(i - 1).x.doubleValue()) + (points.get(i).y.doubleValue() - points.get(i - 1).y.doubleValue()) * (points.get(i).y.doubleValue() - points.get(i - 1).y.doubleValue());
         }
         return (int) Math.sqrt(length);
     }

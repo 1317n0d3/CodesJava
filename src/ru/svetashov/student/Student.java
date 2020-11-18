@@ -11,47 +11,49 @@ import java.util.Arrays;
  *
  * @author Admin
  */
-class Student {
+public class Student<T>{
     String name;
-    private int [] marks;
+    private T [] marks;
+    private Checkable<T> ch;
 
-    public Student(String name, int...marks) {
+    public Student(Checkable<T> ch ,String name, T...marks) {
+        this.ch = ch;
         this.name = name;
-        for (int i:marks){
-            if (i > 5 || i < 2)
+        for (T i:marks){
+            if (!ch.check(i))
                 throw new IllegalArgumentException("Illegal mark");
         }
         this.marks = Arrays.copyOf(marks, marks.length);
     }
 
-    double averageRate(){
-        double rate = 0;
-        if (marks.length == 0) return 0;
-        else {
-            for(int i:marks){
-                rate += i;
-            }
-            rate /= marks.length;
-        }
-        return rate;
-    }
+//    double averageRate(){
+//        double rate = 0;
+//        if (marks.length == 0) return 0;
+//        else {
+//            for(int i:marks){
+//                rate += i;
+//            }
+//            rate /= marks.length;
+//        }
+//        return rate;
+//    }
 
-    boolean excellent(){
-        int flag = 0;
-        for (int i:marks) if (i != 5) flag = 1;
-        if (flag == 0) return true;
-        else return false;
-    }
+//    boolean excellent(){
+//        int flag = 0;
+//        for (int i:marks) if (i != 5) flag = 1;
+//        if (flag == 0) return true;
+//        else return false;
+//    }
 
-    public int[] getMarks() {
+    public T[] getMarks() {
         return Arrays.copyOf(marks, marks.length);
     }
 
-    public void setMarks(int[] marks) {
-        for (int i:marks){
-            if (i > 5 || i < 2)
-                throw new IllegalArgumentException("Illegal mark");
-        }
+    public void setMarks(T[] marks) {
+//        for (int i:marks){
+//            if (i > 5 || i < 2)
+//                throw new IllegalArgumentException("Illegal mark");
+//        }
         this.marks = Arrays.copyOf(marks, marks.length);
     }
 

@@ -4,7 +4,7 @@ import ru.svetashov.exception.FractionException;
 
 import java.util.Objects;
 
-final public class Fraction extends Number{
+final public class Fraction extends Number implements Comparable<Fraction>{
     private int num;
     private int den;
 
@@ -47,6 +47,13 @@ final public class Fraction extends Number{
     public float floatValue(){ return (float)num / den; }
 
     public double doubleValue(){ return  (double)num / den; }
+
+    @Override
+    public int compareTo(Fraction f) {
+        if (this.num == f.num && this.den == f.den) return 0;
+        else if (this.doubleValue() > f.doubleValue()) return 1;
+        else return -1;
+    }
 
     @Override
     public boolean equals(Object o) {

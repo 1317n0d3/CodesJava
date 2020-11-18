@@ -9,6 +9,8 @@ import ru.svetashov.animals.Bird;
 import ru.svetashov.animals.Cat;
 import ru.svetashov.animals.Meowable;
 import ru.svetashov.geometry.*;
+import ru.svetashov.student.Checkable;
+import ru.svetashov.student.Student;
 import ru.svetashov.track.Album;
 import ru.svetashov.track.Track;
 import ru.svetashov.weapons.BestShooter;
@@ -32,15 +34,43 @@ public class Start {
 //
 //        System.out.println(getPolygonalChain(lines));
 
-        List<Point> points = new ArrayList<>();
-        points.add(new Point(2, 3));
-        points.add(new Point(0, 0));
-        points.add(new Point(9, 1));
+//        List<Point> points = new ArrayList<>();
+//        points.add(new Point(2, 3));
+//        points.add(new Point(0, 0));
+//        points.add(new Point(9, 1));
+//
+//        BrokenLine brokenLine = new BrokenLine(points);
+//        ClosedLine closedLine = new ClosedLine(points);
+//
+//        System.out.println(brokenLine.equals(closedLine));
 
-        BrokenLine brokenLine = new BrokenLine(points);
-        ClosedLine closedLine = new ClosedLine(points);
+        Checkable<String> stringCheckable = new Checkable<String>() {
+            @Override
+            public boolean check(String s) {
+                return "зачтено".equals(s) || "не зачтено".equals(s);
+            }
+        };
 
-        System.out.println(brokenLine.equals(closedLine));
+        Student<String> st1 = new Student<>(stringCheckable,"Vasya", "зачтено", "зачтено", "не зачтено");
+
+        Action<String, Integer> action = new Action<String, Integer>() {
+            @Override
+            public Integer act(String obj) {
+                return obj.length();
+            }
+        };
+
+        List<String> list = new ArrayList<>();
+        list.add("smth");
+        list.add("sdsd");
+
+        System.out.println(convert(list, action));
+    }
+
+    public static <T, Q> List<Q> convert(List<T> list, Action<T, Q> act){
+        List<Q> res = new ArrayList<>();
+        for (T obj:list) res.add(act.act(obj));
+        return res;
     }
 
     public static PolygonalChain getPolygonalChain(PolygonalChain...polygonalChains){
@@ -90,13 +120,5 @@ public class Start {
         for (Bird bird : birds){
             bird.sing();
         }
-    }
-
-    public static List<Object> clone(Cloneable...cloneables){
-        List<Object> copies = new ArrayList<>();
-        for(Cloneable cloneable : cloneables){
-//            copies.add(cloneable.clone());
-        }
-        return copies;
     }
 }

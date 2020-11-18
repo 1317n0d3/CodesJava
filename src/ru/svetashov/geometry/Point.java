@@ -11,21 +11,21 @@ import java.util.Objects;
  *
  * @author Admin
  */
-public class Point {
-    int x;
-    int y;
+public class Point <T extends Number> implements Cloneable{
+    T x;
+    T y;
 
-    public Point(int x, int y) {
+    public Point(T x, T y) {
         this.x = x;
         this.y = y;
     }
 
     @Override
     public boolean equals(Object point){
-        if(point == this) return true;
+        if(point.equals(this)) return true;
         if(point == null) return false;
         if(point.getClass() != this.getClass()) return false;
-        return this.x == ((Point)point).x && this.y == ((Point)point).y;
+        return this.x == ((Point<T>)point).x && this.y == ((Point<T>)point).y;
     }
 
     @Override
@@ -34,8 +34,8 @@ public class Point {
     }
 
     @Override
-    public Point clone() throws CloneNotSupportedException{
-        return (Point) super.clone();
+    public Point<T> clone() throws CloneNotSupportedException{
+        return (Point<T>) super.clone();
     }
     
     @Override
