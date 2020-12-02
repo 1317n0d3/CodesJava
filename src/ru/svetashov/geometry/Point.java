@@ -20,6 +20,22 @@ public class Point <T extends Number> implements Cloneable{
         this.y = y;
     }
 
+    public T getX() {
+        return x;
+    }
+
+    public T getY() {
+        return y;
+    }
+
+    public void setX(T x) {
+        this.x = x;
+    }
+
+    public void setY(T y) {
+        this.y = y;
+    }
+
     @Override
     public boolean equals(Object point){
         if(point.equals(this)) return true;

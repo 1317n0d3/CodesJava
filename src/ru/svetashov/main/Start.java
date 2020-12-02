@@ -5,10 +5,9 @@
  */
 package ru.svetashov.main;
 
-import ru.svetashov.animals.Bird;
-import ru.svetashov.animals.Cat;
-import ru.svetashov.animals.Meowable;
+import ru.svetashov.animals.*;
 import ru.svetashov.geometry.*;
+import ru.svetashov.people.Karate;
 import ru.svetashov.student.Checkable;
 import ru.svetashov.student.Student;
 import ru.svetashov.track.Album;
@@ -44,27 +43,49 @@ public class Start {
 //
 //        System.out.println(brokenLine.equals(closedLine));
 
-        Checkable<String> stringCheckable = new Checkable<String>() {
-            @Override
-            public boolean check(String s) {
-                return "зачтено".equals(s) || "не зачтено".equals(s);
-            }
-        };
+//        Checkable<String> stringCheckable = new Checkable<String>() {
+//            @Override
+//            public boolean check(String s) {
+//                return "зачтено".equals(s) || "не зачтено".equals(s);
+//            }
+//        };
+//
+//        Student<String> st1 = new Student<>(stringCheckable,"Vasya", "зачтено", "зачтено", "не зачтено");
+//
+//        Action<String, Integer> action = new Action<String, Integer>() {
+//            @Override
+//            public Integer act(String obj) {
+//                return obj.length();
+//            }
+//        };
+//
+//        List<String> list = new ArrayList<>();
+//        list.add("smth");
+//        list.add("sdsd");
+//
+//        System.out.println(convert(list, action));
+//
+//        System.out.println(reduce(list, (t1, t2) -> t1 + t2));
 
-        Student<String> st1 = new Student<>(stringCheckable,"Vasya", "зачтено", "зачтено", "не зачтено");
+//        System.out.println(sum(2, new Adapter("3")));
 
-        Action<String, Integer> action = new Action<String, Integer>() {
-            @Override
-            public Integer act(String obj) {
-                return obj.length();
-            }
-        };
+//        CounterMeow counter = new CounterMeow(new Cat("Boris"));
+//        mew(counter);
+//        System.out.println(counter.count);
 
-        List<String> list = new ArrayList<>();
-        list.add("smth");
-        list.add("sdsd");
+//        CatDog catDog = new CatDog("CatDog");
+//        catDog.voice(2);
 
-        System.out.println(convert(list, action));
+        Karate karate = new Karate("Man");
+    }
+
+    public static <T> T reduce(List<T> list, Returning<T> type){
+        if (list == null || list.size() == 0) return null;
+        T res = list.get(0);
+        for (int i = 1; i < list.size(); i++){
+            res = type.ret(res, list.get(i));
+        }
+        return res;
     }
 
     public static <T, Q> List<Q> convert(List<T> list, Action<T, Q> act){

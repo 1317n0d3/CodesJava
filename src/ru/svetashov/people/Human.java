@@ -9,7 +9,7 @@ package ru.svetashov.people;
  *
  * @author Admin
  */
-class Human {
+public class Human {
     private FullName name;
     private int height;
     Human father;

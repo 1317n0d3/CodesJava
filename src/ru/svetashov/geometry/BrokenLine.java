@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class BrokenLine implements Lengthable, PolygonalChain {
+public class BrokenLine implements Lengthable, PolygonalChain, Moveable {
     List<Point> points = new ArrayList<>();
 
     public BrokenLine() {
@@ -22,12 +22,27 @@ public class BrokenLine implements Lengthable, PolygonalChain {
         return (int) Math.sqrt(length);
     }
 
+    public void move(int x, int y){
+        List<Point> points = new ArrayList<>();
+        Point<Integer> point;
+        for (int i = 0; i < points.size(); i++){
+            point = points.get(i);
+            point.setX(point.getX() - x);
+            point.setY(point.getY() - y);
+        }
+        setPoints(points);
+    }
+
     public BrokenLine getBrokenLine(){
         return new BrokenLine(points);
     }
 
     public List<Point> getPoints(){
         return points;
+    }
+
+    public void setPoints(List<Point> points) {
+        this.points = points;
     }
 
     @Override

@@ -13,7 +13,7 @@ import java.util.Objects;
  *
  * @author Admin
  */
-public class Line implements Lengthable, PolygonalChain {
+public class Line implements Lengthable, PolygonalChain, Moveable {
     private Point<Integer> p1;
     private Point<Integer> p2;
 
@@ -28,6 +28,11 @@ public class Line implements Lengthable, PolygonalChain {
 
     public int length(){
         return (int)Math.sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
+    }
+
+    public void move(int x, int y){
+        setP1(new Point<>(p1.x - x, p1.y - y));
+        setP2(new Point<>(p1.x - x, p1.y - y));
     }
 
     public Point<Integer> getP1() {
