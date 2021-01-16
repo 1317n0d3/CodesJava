@@ -9,11 +9,14 @@ import Practice.Patterns.Adapter.RoundHole;
 import Practice.Patterns.Adapter.RoundPeg;
 import Practice.Patterns.Adapter.SquarePeg;
 import Practice.Patterns.Adapter.SquareToRoundAdapter;
+import Practice.Patterns.Composite.Circle;
+import Practice.Patterns.Composite.CompoundGraphic;
+import Practice.Patterns.Composite.Graphic;
+import Practice.Patterns.Composite.Square;
 import Practice.Patterns.Decorator.*;
 import Practice.Patterns.Proxy.Image;
 import Practice.Patterns.Proxy.ImageProxy;
 import ru.svetashov.animals.*;
-import ru.svetashov.geometry.*;
 import ru.svetashov.people.Karate;
 import ru.svetashov.student.Checkable;
 import ru.svetashov.student.Student;
@@ -113,7 +116,15 @@ public class Start {
 //        System.out.println(dataSource.readData());
 //        System.out.println(dataSourceDecorator.readData());
 
+        Graphic circle = new Circle(2, 3, 6);
+        Graphic square = new Square(5, 6);
 
+        CompoundGraphic compoundGraphic = new CompoundGraphic();
+        compoundGraphic.add(square);
+        compoundGraphic.add(circle);
+        compoundGraphic.draw();
+        compoundGraphic.move(2, 5);
+        compoundGraphic.draw();
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
@@ -158,25 +169,25 @@ public class Start {
         return res;
     }
 
-    public static double sumArea(Figure...figures){
-        double res = 0;
-        for (Figure figure : figures){
-            res += figure.getArea();
-        }
-        return res;
-    }
-
-    public static int sumLength(Lengthable...lengthables){
-        int res = 0;
-        for(Lengthable lengthable : lengthables){
-            res += lengthable.length();
-        }
-        return res;
-    }
-
-    public static void singBirds(Bird...birds){
-        for (Bird bird : birds){
-            bird.sing();
-        }
-    }
+//    public static double sumArea(Figure...figures){
+//        double res = 0;
+//        for (Figure figure : figures){
+//            res += figure.getArea();
+//        }
+//        return res;
+//    }
+//
+//    public static int sumLength(Lengthable...lengthables){
+//        int res = 0;
+//        for(Lengthable lengthable : lengthables){
+//            res += lengthable.length();
+//        }
+//        return res;
+//    }
+//
+//    public static void singBirds(Bird...birds){
+//        for (Bird bird : birds){
+//            bird.sing();
+//        }
+//    }
 }
