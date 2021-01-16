@@ -9,6 +9,9 @@ import Practice.Patterns.Adapter.RoundHole;
 import Practice.Patterns.Adapter.RoundPeg;
 import Practice.Patterns.Adapter.SquarePeg;
 import Practice.Patterns.Adapter.SquareToRoundAdapter;
+import Practice.Patterns.Decorator.*;
+import Practice.Patterns.Proxy.Image;
+import Practice.Patterns.Proxy.ImageProxy;
 import ru.svetashov.animals.*;
 import ru.svetashov.geometry.*;
 import ru.svetashov.people.Karate;
@@ -93,6 +96,24 @@ public class Start {
 //        } else {
 //            System.out.println("Не вошел :( " + squareToRoundAdapter.getRadius());
 //        }
+
+//        Image image = new Image("Test", 10, 20);
+//        ImageProxy imageProxy = new ImageProxy(image);
+//
+//        imageProxy.draw();
+//        imageProxy.store();
+
+//        DataSourceDecorator dataSourceDecorator = new EncryptingDecorator(new CompressionDecorator(
+//                new FileDataSource("Test file")));
+//
+//        dataSourceDecorator.writeData("test data");
+//
+//        DataSource dataSource = new FileDataSource("Test file");
+//
+//        System.out.println(dataSource.readData());
+//        System.out.println(dataSourceDecorator.readData());
+
+
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
