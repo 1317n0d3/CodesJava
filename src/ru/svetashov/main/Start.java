@@ -5,6 +5,10 @@
  */
 package ru.svetashov.main;
 
+import Practice.Patterns.Adapter.RoundHole;
+import Practice.Patterns.Adapter.RoundPeg;
+import Practice.Patterns.Adapter.SquarePeg;
+import Practice.Patterns.Adapter.SquareToRoundAdapter;
 import ru.svetashov.animals.*;
 import ru.svetashov.geometry.*;
 import ru.svetashov.people.Karate;
@@ -20,6 +24,7 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Integer.divideUnsigned;
 import static java.lang.Math.pow;
 import static java.lang.Integer.parseInt;
 
@@ -67,7 +72,7 @@ public class Start {
 //
 //        System.out.println(reduce(list, (t1, t2) -> t1 + t2));
 
-//        System.out.println(sum(2, new Adapter("3")));
+//        System.out.println(sum(2, new Adapter("37")));
 
 //        CounterMeow counter = new CounterMeow(new Cat("Boris"));
 //        mew(counter);
@@ -76,7 +81,18 @@ public class Start {
 //        CatDog catDog = new CatDog("CatDog");
 //        catDog.voice(2);
 
-        Karate karate = new Karate("Man");
+//        Karate karate = new Karate("Man");
+
+//        RoundHole roundHole = new RoundHole(10);
+//        RoundPeg roundPeg = new RoundPeg(8);
+//        SquarePeg squarePeg = new SquarePeg(100);
+//        SquareToRoundAdapter squareToRoundAdapter = new SquareToRoundAdapter(squarePeg);
+//
+//        if(roundHole.fits(squareToRoundAdapter)){
+//            System.out.println("Вошел!!! УРА!!! " + squareToRoundAdapter.getRadius());
+//        } else {
+//            System.out.println("Не вошел :( " + squareToRoundAdapter.getRadius());
+//        }
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
@@ -94,13 +110,13 @@ public class Start {
         return res;
     }
 
-    public static PolygonalChain getPolygonalChain(PolygonalChain...polygonalChains){
-        List<Point> points = new ArrayList<>();
-        for (PolygonalChain polygonalChain : polygonalChains){
-            points.addAll(polygonalChain.getBrokenLine().getPoints());
-        }
-        return new BrokenLine(points);
-    }
+//    public static PolygonalChain getPolygonalChain(PolygonalChain...polygonalChains){
+//        List<Point> points = new ArrayList<>();
+//        for (PolygonalChain polygonalChain : polygonalChains){
+//            points.addAll(polygonalChain.getBrokenLine().getPoints());
+//        }
+//        return new BrokenLine(points);
+//    }
 
     public static double powStr(String [] args){
         if (args.length != 2) throw new IllegalArgumentException("You must input 2 args");
