@@ -9,14 +9,17 @@ import Practice.Patterns.Creational.AbstractFactory.Application;
 import Practice.Patterns.Creational.AbstractFactory.GUIFactory;
 import Practice.Patterns.Creational.AbstractFactory.MacFactory;
 import Practice.Patterns.Creational.AbstractFactory.WinFactory;
+import Practice.Patterns.Creational.Builder.Car;
+import Practice.Patterns.Creational.Builder.CarBuilder;
+import Practice.Patterns.Creational.Builder.Director;
 import Practice.Patterns.Creational.FactoryMethod.Dialog;
 import Practice.Patterns.Creational.FactoryMethod.WebDialog;
 import Practice.Patterns.Creational.FactoryMethod.WindowsButton;
 import Practice.Patterns.Creational.FactoryMethod.WindowsDialog;
+import Practice.Patterns.Creational.Prototype.Point;
 import Practice.Patterns.Structural.Facade.Computer;
 import ru.svetashov.animals.*;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -140,6 +143,18 @@ public class Start {
 //        #AbstractFactory
 //        Application application = new Application(new MacFactory());
 //        application.onClickButton();
+
+//        #Builder
+//        CarBuilder carBuilder = new CarBuilder();
+//        Director director = new Director();
+//        director.makeSportCar(carBuilder);
+//        Car car = carBuilder.getResult();
+//        System.out.println(car);
+
+//        #Prototype
+//        Point point = new Point(2, 5);
+//        Point point1 = point.clone();
+//        System.out.println(point1);
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
