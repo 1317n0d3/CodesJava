@@ -5,32 +5,21 @@
  */
 package ru.svetashov.main;
 
-import Practice.Patterns.Adapter.RoundHole;
-import Practice.Patterns.Adapter.RoundPeg;
-import Practice.Patterns.Adapter.SquarePeg;
-import Practice.Patterns.Adapter.SquareToRoundAdapter;
-import Practice.Patterns.Composite.Circle;
-import Practice.Patterns.Composite.CompoundGraphic;
-import Practice.Patterns.Composite.Graphic;
-import Practice.Patterns.Composite.Square;
-import Practice.Patterns.Decorator.*;
-import Practice.Patterns.Proxy.Image;
-import Practice.Patterns.Proxy.ImageProxy;
+import Practice.Patterns.Creational.AbstractFactory.Application;
+import Practice.Patterns.Creational.AbstractFactory.GUIFactory;
+import Practice.Patterns.Creational.AbstractFactory.MacFactory;
+import Practice.Patterns.Creational.AbstractFactory.WinFactory;
+import Practice.Patterns.Creational.FactoryMethod.Dialog;
+import Practice.Patterns.Creational.FactoryMethod.WebDialog;
+import Practice.Patterns.Creational.FactoryMethod.WindowsButton;
+import Practice.Patterns.Creational.FactoryMethod.WindowsDialog;
+import Practice.Patterns.Structural.Facade.Computer;
 import ru.svetashov.animals.*;
-import ru.svetashov.people.Karate;
-import ru.svetashov.student.Checkable;
-import ru.svetashov.student.Student;
-import ru.svetashov.track.Album;
-import ru.svetashov.track.Track;
-import ru.svetashov.weapons.BestShooter;
-import ru.svetashov.weapons.Gun;
-import ru.svetashov.weapons.MachineGun;
 
-import java.math.BigInteger;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.Integer.divideUnsigned;
 import static java.lang.Math.pow;
 import static java.lang.Integer.parseInt;
 
@@ -89,6 +78,14 @@ public class Start {
 
 //        Karate karate = new Karate("Man");
 
+
+
+
+//        OOP PATTERNS!!!
+
+//        1.Structural
+
+//        #Adapter
 //        RoundHole roundHole = new RoundHole(10);
 //        RoundPeg roundPeg = new RoundPeg(8);
 //        SquarePeg squarePeg = new SquarePeg(100);
@@ -100,12 +97,15 @@ public class Start {
 //            System.out.println("Не вошел :( " + squareToRoundAdapter.getRadius());
 //        }
 
+
+//        #Proxy
 //        Image image = new Image("Test", 10, 20);
 //        ImageProxy imageProxy = new ImageProxy(image);
 //
 //        imageProxy.draw();
 //        imageProxy.store();
 
+//        #Decorator
 //        DataSourceDecorator dataSourceDecorator = new EncryptingDecorator(new CompressionDecorator(
 //                new FileDataSource("Test file")));
 //
@@ -116,15 +116,30 @@ public class Start {
 //        System.out.println(dataSource.readData());
 //        System.out.println(dataSourceDecorator.readData());
 
-        Graphic circle = new Circle(2, 3, 6);
-        Graphic square = new Square(5, 6);
+//        #Composite
+//        Graphic circle = new Circle(2, 3, 6);
+//        Graphic square = new Square(5, 6);
+//
+//        CompoundGraphic compoundGraphic = new CompoundGraphic();
+//        compoundGraphic.add(square);
+//        compoundGraphic.add(circle);
+//        compoundGraphic.draw();
+//        compoundGraphic.move(2, 5);
+//        compoundGraphic.draw();
 
-        CompoundGraphic compoundGraphic = new CompoundGraphic();
-        compoundGraphic.add(square);
-        compoundGraphic.add(circle);
-        compoundGraphic.draw();
-        compoundGraphic.move(2, 5);
-        compoundGraphic.draw();
+//        #Facade
+//        Computer computer = new Computer();
+//        computer.copyUsbDrive();
+
+//        2.Creational
+
+//        #FactoryMethod
+//        Dialog dialog = new WebDialog();
+//        dialog.renderWindow();
+
+//        #AbstractFactory
+//        Application application = new Application(new MacFactory());
+//        application.onClickButton();
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
