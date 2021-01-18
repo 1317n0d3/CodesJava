@@ -5,6 +5,10 @@
  */
 package ru.svetashov.main;
 
+import Practice.Patterns.Behavioral.Command.*;
+import Practice.Patterns.Behavioral.Iterator.Class;
+import Practice.Patterns.Behavioral.Iterator.Orc;
+import Practice.Patterns.Behavioral.Iterator.SimpleIterator;
 import Practice.Patterns.Creational.AbstractFactory.Application;
 import Practice.Patterns.Creational.AbstractFactory.GUIFactory;
 import Practice.Patterns.Creational.AbstractFactory.MacFactory;
@@ -17,7 +21,8 @@ import Practice.Patterns.Creational.FactoryMethod.WebDialog;
 import Practice.Patterns.Creational.FactoryMethod.WindowsButton;
 import Practice.Patterns.Creational.FactoryMethod.WindowsDialog;
 import Practice.Patterns.Creational.Prototype.Point;
-import Practice.Patterns.Structural.Facade.Computer;
+import Practice.Patterns.Creational.Singleton.Singleton;
+import Practice.Patterns.Behavioral.Command.Computer;
 import ru.svetashov.animals.*;
 
 import java.util.ArrayList;
@@ -155,6 +160,35 @@ public class Start {
 //        Point point = new Point(2, 5);
 //        Point point1 = point.clone();
 //        System.out.println(point1);
+
+//        #Singleton
+//        Singleton singleton = Singleton.getInstance("Test data...");
+//        Singleton.getInstance("New data...");
+//        System.out.println(singleton.getData());
+
+//        #Command
+//        Computer computer = new Computer();
+//        User user = new User(new StartCompCommand(computer), new StopCompCommand(computer), new ResetCompCommand(computer));
+//        user.startComputer();
+//        user.stopComputer();
+//        user.resetComputer();
+
+//        #Iterator
+//        Orc orc = new Orc("Eblo");
+//        Orc orc1 = new Orc("Eblan");
+//        Orc orc2 = new Orc("Dolboeb");
+//        Orc orc3 = new Orc("Sosatel");
+//        ArrayList<Orc> orcs = new ArrayList<>();
+//        orcs.add(orc);
+//        orcs.add(orc1);
+//        orcs.add(orc2);
+//        orcs.add(orc3);
+//        Class orcClass = new Class(orcs);
+//        SimpleIterator orcsArr = new SimpleIterator(orcs);
+//        while (orcsArr.hasNext()){
+//            orcsArr.next();
+//            System.out.println(orcsArr);
+//        }
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
