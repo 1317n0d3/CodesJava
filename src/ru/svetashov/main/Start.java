@@ -21,6 +21,11 @@ import Practice.Patterns.Behavioral.Observer.Reciever;
 import Practice.Patterns.Behavioral.ObserverExam.Alien;
 import Practice.Patterns.Behavioral.ObserverExam.Human;
 import Practice.Patterns.Behavioral.ObserverExam.Moon;
+import Practice.Patterns.Behavioral.State.Green;
+import Practice.Patterns.Behavioral.State.TrafficLights;
+import Practice.Patterns.Behavioral.TemplateMethod.A;
+import Practice.Patterns.Behavioral.TemplateMethod.B;
+import Practice.Patterns.Behavioral.TemplateMethod.C;
 import Practice.Patterns.Creational.AbstractFactory.Application;
 import Practice.Patterns.Creational.AbstractFactory.GUIFactory;
 import Practice.Patterns.Creational.AbstractFactory.MacFactory;
@@ -226,17 +231,32 @@ public class Start {
 //        moon.addObserver(new Human());
 //        moon.addObserver(new Alien());
 
-        TextChat chat = new TextChat();
-        User admin = new Admin(chat);
-        User u1 = new SimpleUser(chat);
-        User u2 = new SimpleUser(chat);
+//        TextChat chat = new TextChat();
+//        User admin = new Admin(chat);
+//        User u1 = new SimpleUser(chat);
+//        User u2 = new SimpleUser(chat);
+//
+//        chat.setAdmin(admin);
+//        chat.addUser(u1);
+//        chat.addUser(u2);
+//
+//        u1.sendMessage("qq");
+//        admin.sendMessage("Hi, man");
 
-        chat.setAdmin(admin);
-        chat.addUser(u1);
-        chat.addUser(u2);
+//        #TemplateMethod
+//        C a = new A();
+//        C b = new B();
+//
+//        a.templateMethod();
+//        System.out.println("\n");
+//        b.templateMethod();
 
-        u1.sendMessage("qq");
-        admin.sendMessage("Hi, man");
+//        #State
+        TrafficLights trafficLights = new TrafficLights();
+        for (int i = 0; i < 10; i++){
+            trafficLights.getColor();
+            trafficLights.nextColor();
+        }
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
