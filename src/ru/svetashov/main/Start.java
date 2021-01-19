@@ -23,10 +23,13 @@ import Practice.Patterns.Behavioral.ObserverExam.Human;
 import Practice.Patterns.Behavioral.ObserverExam.Moon;
 import Practice.Patterns.Behavioral.State.Green;
 import Practice.Patterns.Behavioral.State.TrafficLights;
+import Practice.Patterns.Behavioral.Strategy.Addition;
+import Practice.Patterns.Behavioral.Strategy.Application;
+import Practice.Patterns.Behavioral.Strategy.Multiply;
+import Practice.Patterns.Behavioral.Strategy.Subtraction;
 import Practice.Patterns.Behavioral.TemplateMethod.A;
 import Practice.Patterns.Behavioral.TemplateMethod.B;
 import Practice.Patterns.Behavioral.TemplateMethod.C;
-import Practice.Patterns.Creational.AbstractFactory.Application;
 import Practice.Patterns.Creational.AbstractFactory.GUIFactory;
 import Practice.Patterns.Creational.AbstractFactory.MacFactory;
 import Practice.Patterns.Creational.AbstractFactory.WinFactory;
@@ -252,11 +255,19 @@ public class Start {
 //        b.templateMethod();
 
 //        #State
-        TrafficLights trafficLights = new TrafficLights();
-        for (int i = 0; i < 10; i++){
-            trafficLights.getColor();
-            trafficLights.nextColor();
-        }
+//        TrafficLights trafficLights = new TrafficLights();
+//        for (int i = 0; i < 10; i++){
+//            trafficLights.getColor();
+//            trafficLights.nextColor();
+//        }
+
+//        #Strategy
+//        Application application = new Application(new Multiply());
+//        application.calculation(2, 5);
+//        application.setMathOperation(new Subtraction());
+//        application.calculation(2, 5);
+//        application.setMathOperation(new Addition());
+//        application.calculation(2, 5);
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
