@@ -9,6 +9,18 @@ import Practice.Patterns.Behavioral.Command.*;
 import Practice.Patterns.Behavioral.Iterator.Class;
 import Practice.Patterns.Behavioral.Iterator.Orc;
 import Practice.Patterns.Behavioral.Iterator.SimpleIterator;
+import Practice.Patterns.Behavioral.Mediator.Admin;
+import Practice.Patterns.Behavioral.Mediator.SimpleUser;
+import Practice.Patterns.Behavioral.Mediator.TextChat;
+import Practice.Patterns.Behavioral.Mediator.User;
+import Practice.Patterns.Behavioral.Memento.File;
+import Practice.Patterns.Behavioral.Memento.Game;
+import Practice.Patterns.Behavioral.Observer.Messenger;
+import Practice.Patterns.Behavioral.Observer.MeteoStation;
+import Practice.Patterns.Behavioral.Observer.Reciever;
+import Practice.Patterns.Behavioral.ObserverExam.Alien;
+import Practice.Patterns.Behavioral.ObserverExam.Human;
+import Practice.Patterns.Behavioral.ObserverExam.Moon;
 import Practice.Patterns.Creational.AbstractFactory.Application;
 import Practice.Patterns.Creational.AbstractFactory.GUIFactory;
 import Practice.Patterns.Creational.AbstractFactory.MacFactory;
@@ -189,6 +201,42 @@ public class Start {
 //            orcsArr.next();
 //            System.out.println(orcsArr);
 //        }
+
+//        #Memento
+//        Game game = new Game();
+//        game.setGame("23", 40);
+//        File file = new File(game.save());
+//        game.setGame("22", 20);
+//        game.load(file.getSave());
+//        System.out.println(game);
+
+//        #Observer
+//        MeteoStation meteoStation = new MeteoStation(12, 750);
+//
+//        meteoStation.addObserver(new Reciever());
+//        meteoStation.addObserver(new Messenger());
+//        meteoStation.addObserver(new Reciever());
+//
+//        meteoStation.setMeteoStation(10, 745);
+//        meteoStation.setMeteoStation(-20, 760);
+
+//        Moon moon = new Moon();
+//        moon.addObserver(new Alien());
+//        moon.addObserver(new Human());
+//        moon.addObserver(new Human());
+//        moon.addObserver(new Alien());
+
+        TextChat chat = new TextChat();
+        User admin = new Admin(chat);
+        User u1 = new SimpleUser(chat);
+        User u2 = new SimpleUser(chat);
+
+        chat.setAdmin(admin);
+        chat.addUser(u1);
+        chat.addUser(u2);
+
+        u1.sendMessage("qq");
+        admin.sendMessage("Hi, man");
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
