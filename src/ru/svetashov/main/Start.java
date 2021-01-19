@@ -19,7 +19,6 @@ import Practice.Patterns.Behavioral.Observer.Messenger;
 import Practice.Patterns.Behavioral.Observer.MeteoStation;
 import Practice.Patterns.Behavioral.Observer.Reciever;
 import Practice.Patterns.Behavioral.ObserverExam.Alien;
-import Practice.Patterns.Behavioral.ObserverExam.Human;
 import Practice.Patterns.Behavioral.ObserverExam.Moon;
 import Practice.Patterns.Behavioral.State.Green;
 import Practice.Patterns.Behavioral.State.TrafficLights;
@@ -30,6 +29,7 @@ import Practice.Patterns.Behavioral.Strategy.Subtraction;
 import Practice.Patterns.Behavioral.TemplateMethod.A;
 import Practice.Patterns.Behavioral.TemplateMethod.B;
 import Practice.Patterns.Behavioral.TemplateMethod.C;
+import Practice.Patterns.Behavioral.Visitor.*;
 import Practice.Patterns.Creational.AbstractFactory.GUIFactory;
 import Practice.Patterns.Creational.AbstractFactory.MacFactory;
 import Practice.Patterns.Creational.AbstractFactory.WinFactory;
@@ -268,6 +268,16 @@ public class Start {
 //        application.calculation(2, 5);
 //        application.setMathOperation(new Addition());
 //        application.calculation(2, 5);
+
+//        #Visitor
+//        Visitor human = new Human();
+//        Visitor bully = new Bully();
+//
+//        CarDetails engine = new Engine();
+//        engine.accept(bully);
+//        CarDetails wheel = new Wheel();
+//        engine.accept(human);
+//        wheel.accept(bully);
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
