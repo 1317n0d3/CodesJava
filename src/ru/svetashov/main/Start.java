@@ -199,10 +199,10 @@ public class Start {
 //        user.resetComputer();
 
 //        #Iterator
-//        Orc orc = new Orc("Eblo");
-//        Orc orc1 = new Orc("Eblan");
-//        Orc orc2 = new Orc("Dolboeb");
-//        Orc orc3 = new Orc("Sosatel");
+//        Orc orc = new Orc("Orc1");
+//        Orc orc1 = new Orc("Orc2");
+//        Orc orc2 = new Orc("Orc3");
+//        Orc orc3 = new Orc("Orc4");
 //        ArrayList<Orc> orcs = new ArrayList<>();
 //        orcs.add(orc);
 //        orcs.add(orc1);
@@ -239,6 +239,7 @@ public class Start {
 //        moon.addObserver(new Human());
 //        moon.addObserver(new Alien());
 
+//        #Mediator
 //        TextChat chat = new TextChat();
 //        User admin = new Admin(chat);
 //        User u1 = new SimpleUser(chat);
