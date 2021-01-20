@@ -5,6 +5,7 @@
  */
 package ru.svetashov.main;
 
+import Practice.Patterns.Behavioral.ChainOfResponsibility.*;
 import Practice.Patterns.Behavioral.Command.*;
 import Practice.Patterns.Behavioral.Iterator.Class;
 import Practice.Patterns.Behavioral.Iterator.Orc;
@@ -33,7 +34,6 @@ import Practice.Patterns.Behavioral.Visitor.*;
 import Practice.Patterns.Creational.AbstractFactory.GUIFactory;
 import Practice.Patterns.Creational.AbstractFactory.MacFactory;
 import Practice.Patterns.Creational.AbstractFactory.WinFactory;
-import Practice.Patterns.Creational.Builder.Car;
 import Practice.Patterns.Creational.Builder.CarBuilder;
 import Practice.Patterns.Creational.Builder.Director;
 import Practice.Patterns.Creational.FactoryMethod.Dialog;
@@ -43,6 +43,11 @@ import Practice.Patterns.Creational.FactoryMethod.WindowsDialog;
 import Practice.Patterns.Creational.Prototype.Point;
 import Practice.Patterns.Creational.Singleton.Singleton;
 import Practice.Patterns.Behavioral.Command.Computer;
+import Practice.Patterns.Structural.Bridge.Coupe;
+import Practice.Patterns.Structural.Bridge.Hatchbak;
+import Practice.Patterns.Structural.Bridge.Kia;
+import Practice.Patterns.Structural.Bridge.Car;
+import Practice.Patterns.Structural.Flyweight.ShapeFactory;
 import ru.svetashov.animals.*;
 
 import java.util.ArrayList;
@@ -278,6 +283,25 @@ public class Start {
 //        CarDetails wheel = new Wheel();
 //        engine.accept(human);
 //        wheel.accept(bully);
+
+//        #ChainOfResponsibility
+//        Logger logger = new SmsLogger(Level.error);
+//        Logger logger1 = new EmailLogger(Level.debug);
+//        Logger logger2 = new FileLogger(Level.info);
+//        logger.setNextLogger(logger1);
+//        logger1.setNextLogger(logger2);
+//
+//        logger.writeMessage("System error", Level.error);
+//        logger.writeMessage("Debug...", Level.debug);
+//        logger.writeMessage("Information...", Level.info);
+
+//        #Bridge
+//        Car car = new Hatchbak(new Kia());
+//        car.showDetails();
+
+//        #Flyweight
+//        ShapeFactory shapeFactory = new ShapeFactory();
+//        shapeFactory.getShape("circle").draw(2, 2);
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
