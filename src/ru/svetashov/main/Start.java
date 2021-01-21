@@ -8,12 +8,10 @@ package ru.svetashov.main;
 import Practice.Patterns.Behavioral.ChainOfResponsibility.*;
 import Practice.Patterns.Behavioral.Command.*;
 import Practice.Patterns.Behavioral.Iterator.Class;
-import Practice.Patterns.Behavioral.Iterator.Orc;
 import Practice.Patterns.Behavioral.Iterator.SimpleIterator;
 import Practice.Patterns.Behavioral.Mediator.Admin;
 import Practice.Patterns.Behavioral.Mediator.SimpleUser;
 import Practice.Patterns.Behavioral.Mediator.TextChat;
-import Practice.Patterns.Behavioral.Mediator.User;
 import Practice.Patterns.Behavioral.Memento.File;
 import Practice.Patterns.Behavioral.Memento.Game;
 import Practice.Patterns.Behavioral.Observer.Messenger;
@@ -48,6 +46,18 @@ import Practice.Patterns.Structural.Bridge.Hatchbak;
 import Practice.Patterns.Structural.Bridge.Kia;
 import Practice.Patterns.Structural.Bridge.Car;
 import Practice.Patterns.Structural.Flyweight.ShapeFactory;
+import Practice.Tasks.Task1.*;
+import Practice.Tasks.Task2.Command;
+import Practice.Tasks.Task2.Date;
+import Practice.Tasks.Task2.HelloWorld;
+import Practice.Tasks.Task2.User;
+import Practice.Tasks.Task3.BaseUnitFactory;
+import Practice.Tasks.Task3.Soldier;
+import Practice.Tasks.Task3.UnitBase;
+import Practice.Tasks.Task3.UnitFactory;
+import Practice.Tasks.Task4.*;
+import Practice.Tasks.Task5.Elf;
+import Practice.Tasks.Task5.Orc;
 import ru.svetashov.animals.*;
 
 import java.util.ArrayList;
@@ -303,6 +313,49 @@ public class Start {
 //        #Flyweight
 //        ShapeFactory shapeFactory = new ShapeFactory();
 //        shapeFactory.getShape("circle").draw(2, 2);
+
+//        #Task1
+//        Season season = new Season(new Sheep(), new Wolf());
+//        season.summer();
+
+//        #Task2
+//        User user = new User(new Date(), new HelloWorld());
+//        user.getDate();
+//        user.getHelloWorld();
+
+//        #Task3
+//        UnitFactory unitFactory = new UnitFactory();
+//        BaseUnitFactory baseUnitFactory = new BaseUnitFactory(new UnitFactory(), new UnitFactory(), unitFactory);
+//        unitFactory.upgradeUnit();
+//        UnitBase unitBase = new UnitBase();
+//        unitBase.addUnitsToBase(baseUnitFactory.getUnitFromFactories());
+//        unitBase.moveUnits();
+//        unitBase.damageUnits(20);
+//        unitFactory.upgradeUnit();
+//        unitBase.addUnitsToBase(baseUnitFactory.getUnitFromFactories());
+//        unitBase.getUnitsHealth();
+
+//        #Task4
+//        Department dekanat = new Dekanat();
+//        Department pfu = new PFU();
+//        Department safety = new SafetyDepartment();
+//        Department resourceDep = new ResourcesDepartment();
+//        Department rectorat = new Rectorat();
+//
+//        dekanat.setNext(pfu);
+//        pfu.setNext(safety);
+//        safety.setNext(resourceDep);
+//        resourceDep.setNext(rectorat);
+//
+//        Statement statement = new Statement("abcdef");
+//        dekanat.acceptStatement(statement);
+
+//        #Task5
+//        Elf elf = new Elf();
+//        Orc orc = new Orc();
+//        elf.createCloseUnit().hit();
+//        orc.createDistantUnit().shoot();
+
     }
 
     public static <T> T reduce(List<T> list, Returning<T> type){
